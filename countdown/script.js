@@ -1,0 +1,16 @@
+const endDate = "9  oct 2024 9:00 pm";
+document.getElementById("end-date").innerText = endDate;
+const input = document.querySelectorAll("input");
+function clock() {
+  const end = new Date(endDate);
+  const now = new Date();
+   const diff = (end - now ) /1000;
+   console.log(diff);
+   input[0].value = (Math.floor(diff /3600 / 24));
+   input[1].value = Math.floor((diff / 3600) % 24);
+   input[2].value = Math.floor(diff /60) % 60;
+   input[3].value = Math.floor(diff) %24;
+   
+}
+setInterval(clock, 1000);
+clock();
